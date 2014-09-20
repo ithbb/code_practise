@@ -6,6 +6,12 @@ For example, given n = 3, a solution set is:
 "((()))", "(()())", "(())()", "()(())", "()()()"
 */
 
+/*
+
+number of possible case:
+ 
+  C(n+1) = [sigma i]C(i)*C(n-i)
+*/
 public class Solution {
     public List<String> generateParenthesis(int n) {
         
