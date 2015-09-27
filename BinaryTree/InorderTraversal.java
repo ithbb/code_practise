@@ -25,10 +25,7 @@ public class Solution {
         
         Stack<TreeNode> stack = new Stack<TreeNode>();
         
-/*        if (root.left != null) {
-            stack.push(root.left);
-        }*/
-        
+        // Comparing to PreOrder, need another current node to push and pop the children nodes.
         TreeNode curNode = root;
         
         while (!stack.empty() || curNode != null) {
