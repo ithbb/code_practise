@@ -1,26 +1,3 @@
-//TOBEDONE
-//
-//
-
-/*
-Given two words (start and end), and a dictionary, find the length of shortest transformation sequence from start to end, such that:
-
-Only one letter can be changed at a time
-Each intermediate word must exist in the dictionary
-Have you met this question in a real interview? Yes
-Example
-Given:
-start = "hit"
-end = "cog"
-dict = ["hot","dot","dog","lot","log"]
-As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
-return its length 5.
-
-Note
-Return 0 if there is no such transformation sequence.
-All words have the same length.
-All words contain only lowercase alphabetic characters.
-*/
 public class Solution {
     /**
       * @param start, a string
@@ -54,7 +31,7 @@ public class Solution {
                         continue;
                     }
                     
-                    if (nextWord == end) {
+                    if (nextWord.equals(end)) {
                         return length;
                     }
                     
@@ -74,7 +51,7 @@ public class Solution {
         for (int i = 0; i < len; i++) {
             char c = word.charAt(i);
             for (char j = 'a'; j < 'z'; j++) {
-                if (j == c) continue;
+                if (j == c) {continue;}
                 String word2 = replace(word, i, j);
                 if (dict.contains(word2)) {
                     list.add(word2);
