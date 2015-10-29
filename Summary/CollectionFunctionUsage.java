@@ -27,10 +27,24 @@ public void StringActions() {
 /*
 * ArrayList/ LinkedList
 */
-LinkedList<String> linkedlist;
-ArrayList<String> stringArryList;
+LinkedList<String> linkedList;
+ArrayList<String> stringArrayList;
 List<String> stringList;
 public void ListActions() {
+    stringArrayList = new ArrayList<String>(Arrays.asList("abc", "bcd", "dce"));
+    System.out.println("Init ArrayList");
+    for(String s : stringArrayList) {
+        System.out.println(s);
+    }
+    
+    linkedList = new LinkedList<String>();
+    linkedList.add("ABC");
+    linkedList.remove("ABC");
+    System.out.println("LinkedList Size = " + linkedList.size());
+    
+    stringList = new ArrayList<>(Arrays.asList("abc", "bcd", "dce"));
+    stringList.subList(0, 1);
+    System.out.println("stringList Size = " + stringList.size());
  
 }
 
