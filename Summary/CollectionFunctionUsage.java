@@ -58,15 +58,23 @@ public void queueActions() {
 *  Binary Tree
 */
 private class TreeNode {
+    String label;
+    TreeNode left;
+    TreeNode right;
 }
 
 /*
 * Graph
 */
 private class UndirectedGraphNode {
+    String label;
+    ArrayList<UndirectedGraphNode> neighbors;
 }
 
 private class DirectedGraphNode {
+    String label;
+    ArrayList<DirectedGraphNode> inNeighbors;
+    ArrayList<DirectedGraphNode> outNeighbors;
 }
 
 
