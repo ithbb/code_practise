@@ -40,6 +40,20 @@ public void ListActions() {
 HashMap<Integer, String> hashmap;
 HashSet<String> hashset;
 public void hashActions() {
+    hashmap = new HashMap<Integer, String>();
+    hashmap.put(1, "string1");
+    hashmap.put(2, "string2");
+    String s1 = hashmap.get(1);
+    
+    if(hashmap.containsKey(1)) {
+        System.out.println("hashmap contains string1");
+    }
+    hashmap.remove(2);
+    if(hashmap.containsKey(2)) {
+        System.out.println("hashmap doesn't contains string2");
+    }
+    System.out.println("hashmap size = " + hashmap.size());
+ 
 }
 
 /*
