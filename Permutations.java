@@ -1,9 +1,15 @@
-/*
-Given a collection of numbers, return all possible permutations.
-
-For example,
-[1,2,3] have the following permutations:
-[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], and [3,2,1].
+/*Given a list of numbers, return all possible permutations.
+Elements in a subset must be in non-descending order.
+The solution set must not contain duplicate subsets.
+For nums = [1,2,3], the permutations are:
+[
+  [1,2,3],
+  [1,3,2],
+  [2,1,3],
+  [2,3,1],
+  [3,1,2],
+  [3,2,1]
+]
 */
 
 public class Solution {
@@ -47,5 +53,55 @@ public class Solution {
             retList.add(subList);
         }
         return retList;
-    }
+    } 
 }
+
+
+
+
+
+
+
+// 规范解
+class Solution {
+    /**
+     * @param nums: A list of integers.
+     * @return: A list of permutations.
+     */
+    public ArrayList<ArrayList<Integer>> permute(ArrayList<Integer> nums) {
+            
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        if(nums == null || nums.size() == 0) {
+            return result;
+        }
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        Collections.sort(nums);  
+        permuteHelper(result, list, nums);
+
+        return result;
+    }
+
+
+    private void permuteHelper(ArrayList<ArrayList<Integer>> result,
+        ArrayList<Integer> list, ArrayList<Integer> nums) {
+
+        if (list.size() == nums.size()) {
+            result.add(new ArrayList<Integer>(list));
+            return;
+        }
+        for (int i = 0; i < nums.size(); i++) {
+            
+            if(list.contains(nums.get(i))){
+                continue;
+            }
+
+            list.add(nums.get(i));
+            permuteHelper(result, list, nums);
+            list.remove(list.size() - 1);
+        }
+    }
+    
+}
+
+
+
