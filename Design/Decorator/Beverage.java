@@ -9,5 +9,13 @@ public class Beverage {
       return description;
   }
   
+  public Size getSize() {
+    return size;
+  }
+  
+  public void setSize(Size s) {
+    this.size = s;
+  }
+  
   public abstract double cost();
 }
